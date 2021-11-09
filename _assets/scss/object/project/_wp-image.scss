@@ -1,0 +1,226 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+.wp-block-media-text,
+.wp-block-column,
+.wp-block-image,
+.wp-block-gallery{
+    & img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__content,
+.wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__media,
+.wp-block-media-text .wp-block-media-text__content,
+.wp-block-media-text .wp-block-media-text__media {
+    align-self: flex-start;
+}
+
+// wp-画像
+.wp-block-image {
+    margin-bottom: 30px;
+    @include mixin.breakpoint(tab) {
+    margin-bottom: 60px;
+    }
+    &.alignfull.size-full {
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+    }
+}
+
+
+// wp-メディアとテキスト
+.wp-block-media-text {
+    margin-bottom: 40px;
+    @include mixin.breakpoint(tab) {
+        margin-bottom: 50px;
+    }
+    & .wp-block-media-text__content {
+        padding: 0 0 0 30px;
+    }
+    &.has-media-on-the-right .wp-block-media-text__content {
+        padding: 0 30px 0 0 ;
+    }
+    & p {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+// wp-メディアとテキスト-モバイルでは縦に並べる
+.wp-block-media-text.is-stacked-on-mobile {
+    & .wp-block-media-text__content {
+        padding: 30px 0;
+        @include mixin.breakpoint(tab) {
+            padding: 0 0 0 30px;
+            }
+    }
+    &.has-media-on-the-right .wp-block-media-text__content {
+        @include mixin.breakpoint(tab) {
+            padding: 0 30px 0 0 ;
+        }
+    }
+}
+
+// wp-ギャラリー
+.wp-block-gallery {
+        margin-bottom: 15px;
+        @include mixin.breakpoint(tab) {
+            margin-bottom: 50px;
+}
+    & .blocks-gallery-grid {
+        justify-content: space-between;
+        & .blocks-gallery-item {
+            width: 100%;
+            flex-grow: 0;
+            margin-right: 0;
+            margin-bottom: 20px;
+                @include mixin.breakpoint(tab) {
+                // width: 49%;
+                width: calc((100% - 20px)/2);
+            }
+                @include mixin.breakpoint(pc) {
+                // width: 32%;
+                width: calc((100% - 40px)/3);
+            }
+        }
+    }
+}
+
+// .p-image {
+//     &--full {
+//         margin-bottom: 30px;
+//                 @include mixin.breakpoint(tab) {
+//             margin-bottom: 60px;
+//         }
+//         & img {
+//             width  : 100%;
+//             height : 100%;
+//             display: block;
+//         }
+//     }
+//     &--sidebyside {
+//         margin-bottom: 40px;
+//         @include mixin.breakpoint(tab) {
+//             margin-bottom: 60px;
+//         }
+//         @include mixin.breakpoint(pc) {
+//             margin-bottom: 50px;
+//         }
+//         &__unit {
+//             margin-bottom : 45px;
+//             // @include mixin.breakpoint(tab) {
+//             //     margin-bottom: 120px;
+//             // }
+//             @include mixin.breakpoint(pc) {
+//                 margin-bottom: 40px;
+//             }
+//             &:last-child {
+//                 margin-bottom: 0;
+//             }
+//             &:nth-child(even) {
+//                 & .p-image--sidebyside__inner {
+//                     flex-direction: row-reverse;
+//                 }
+//                 & .p-image--sidebyside__item {
+//                     padding-right: 15px;
+//                     @include mixin.breakpoint(tab) {
+//                         padding-right: 25px;
+//                     }
+//                     @include mixin.breakpoint(pc) {
+//                         padding-right: 50px;
+//                     }
+//                 }
+//             }
+//             &:nth-child(odd) {
+//                 & .p-image--sidebyside__item {
+//                     padding-left: 15px;
+//                     @include mixin.breakpoint(tab) {
+//                         padding-left: 25px;
+//                     }
+//                     @include mixin.breakpoint(pc) {
+//                         padding-left: 50px;
+//                     }
+//                 }
+//             }
+//         }
+//         &__inner {
+//             display       : flex;
+//             flex-direction: row;
+//         }
+//         &__image {
+//                 display   : block;
+//                 width     : 42%;
+//                 height    : 100%;
+//                 object-fit: cover;
+//         }
+//         &__item {
+//             width     : 58%;
+//             height    : 160px;
+//             overflow-y: hidden;
+//             @include mixin.breakpoint(tab) {
+//                 height: 373px;
+//             }
+//             &__text {
+//                 line-height: 1.45;
+//                 color      : variable.$c--brown;
+//                 @include mixin.breakpoint(tab) {
+//                     line-height: 1.6;
+//                 }
+//             }
+//         }
+//     }    &--center {
+//         display        : flex;
+//         justify-content: center;
+//         margin-bottom  : 30px;
+//         @include mixin.breakpoint(tab) {
+//             margin-bottom: 240px;
+//         }
+//         @include mixin.breakpoint(pc) {
+//             margin-bottom  : 60px;
+//         }
+//         & img {
+//             display  : block;
+//             width    : 80%;
+//             max-width: 581px;
+//         }
+//     }
+//     &--gallery {
+//         display        : flex;
+//         justify-content: space-between;
+//         flex-wrap      : wrap;
+//         margin-bottom  : 15px;
+//         @include mixin.breakpoint(tab) {
+//             margin-bottom: 60px;
+//         }
+//         @include mixin.breakpoint(pc) {
+//             margin-bottom: 40px;
+//         }
+//         &__image {
+//             margin-bottom: 20px;
+//             @include mixin.breakpoint(tab) {
+//                 margin: 0 20px 0 0;
+//                 width : calc((100% - 20px) / 2 );
+//                 &:nth-of-type(2n) {
+//                     margin: 0 0 20px 0;
+//                 }
+//             }
+//             @include mixin.breakpoint(pc) {
+//                 width: calc((100% - 40px) / 3 );
+//                 &:nth-of-type(2n) {
+//                     margin-right: 20px;
+//                 }
+//                 &:nth-of-type(3n) {
+//                     margin: 0 0 20px 0;
+//                 }
+//             }
+//             & img {
+//                 display: block;
+//                 width  : 100%;
+//             }
+//         }
+//     }
+// }
+

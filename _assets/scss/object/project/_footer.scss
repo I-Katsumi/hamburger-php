@@ -1,0 +1,77 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+// ==============================================================
+//  フッター
+// ==============================================================
+
+// .p-footer {
+//     background-image: url(../img/footer_bg.png);
+//     background-size : cover;
+//     text-align      : center;
+//     color           : #fff;
+//     &__nav {
+//         display        : flex;
+//         justify-content: center;
+//         font-size      : 2rem;
+//         padding-top    : 35px;
+//         padding-bottom : 25px;
+//         &__partition {
+//             padding: 0 10px;
+//         }
+//     }
+// }
+
+.p-footer {
+    background-image: url(../../../img/footer_bg.png);
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    &__nav {
+        display        : flex;
+        justify-content: center;
+        font-size      : 2rem;
+        padding-top    : 35px;
+        padding-bottom : 25px;
+        & li {
+            border-right: 2px solid #fff;
+            padding: 0 10px;
+            line-height: 1;
+            &:last-child {
+                border: none;
+              }
+        }
+    }
+
+  }
+//   .p-footer__nav {
+//     display: flex;
+//     justify-content: center;
+//     font-size: 2rem;
+//     padding-top: 35px;
+//     padding-bottom: 25px;
+//   }
+//   /* 追加 */
+//   /* .p-footer__nav li::after{
+//     content: "|";
+//     padding: 0 10px;
+//   }
+//   .p-footer__nav li:last-child::after{
+//   content: "";
+//   } */
+  
+//   .p-footer__nav li{
+//     border-right: 2px solid #fff;
+//     padding: 0 10px;
+//     line-height: 1;
+//   }
+//   .p-footer__nav li:last-child {
+//     border: none;
+//   }
+//   /* 追加ここまで */
+  
+//   .p-footer__nav__partition {
+//     padding: 0 10px;
+//   }
+  
+  

@@ -1,0 +1,53 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+// 投稿・固定ページ（タイトル・テキスト・リスト）
+.p-post,
+.p-page {
+    color: variable.$c--brown;
+    & h2 {
+        font-size    : 2.8rem;
+        margin-bottom: 25px;
+        @include mixin.breakpoint(tab) {
+            font-size    : 3.6rem;
+            margin-bottom: 55px;
+        }
+    }
+    & h3 {
+        font-size    : 2.4rem;
+        margin-bottom: 25px;
+        @include mixin.breakpoint(tab) {
+            font-size    : 2.8rem;
+            margin-bottom: 50px;
+        }
+    }
+    & h4, h5, h6 {
+        font-size    : 2.0rem;
+        margin-bottom: 20px;
+        @include mixin.breakpoint(tab) {
+            margin-bottom: 50px;
+        }
+    }
+    & p {
+        line-height  : 1.45;
+        margin-bottom: 30px;
+        @include mixin.breakpoint(tab) {
+            margin-bottom: 60px;
+        }
+    }
+    & ol {
+    list-style-type: decimal;
+    }
+    & ol,ul:not(.blocks-gallery-grid) {
+        list-style-position: inside;
+        &:first-child {
+            padding: 20px;
+        }
+        @include mixin.breakpoint(tab) {
+            padding-left: 50px;
+        }
+    }
+    & li {
+        line-height: 1.45;
+    }
+}

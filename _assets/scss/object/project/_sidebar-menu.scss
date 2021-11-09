@@ -1,0 +1,98 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+// .p-sidebarMenu {
+//     &__title {
+//         padding-left: 10%;
+//         padding-top : 50px;
+//         display     : none;
+//         @include mixin.breakpoint(pc) {
+//             display: block;
+//         }
+//     }
+//     &__list {
+//         padding: 180px 0;
+//         @include mixin.breakpoint(pc) {
+//             padding-top: 70px;
+//         }
+//         &__item {
+//             padding-left: 10%;
+//             font-size   : 2.4rem;
+//             font-weight : 700;
+//             &__lv2 {
+//                 padding: 25px 0 25px 20px;
+//                 &__item {
+//                     font-size  : 2.0rem;
+//                     font-weight: normal;
+//                     line-height: 250%;
+//                 }
+//             }
+//         }
+//     }
+// }
+.p-sidebarMenu {
+    &__title {
+        padding-left: 10%;
+        padding-top : 50px;
+        display     : none;
+        @include mixin.breakpoint(pc) {
+            display: block;
+        }
+    }
+    &__list {
+        padding: 180px 0;
+        @include mixin.breakpoint(pc) {
+            padding-top: 70px;
+        }
+        &>li {
+            padding-left: 10%;
+            font-size   : 2.4rem;
+            font-weight : 700;
+            &>ul {
+                padding: 25px 0 25px 20px;
+                &>li {
+                    font-size  : 2.0rem;
+                    font-weight: normal;
+                    line-height: 250%;
+                }
+            }
+        }
+    }
+}
+
+// .p-sidebarMenu__title {
+//     padding-left: 10%;
+//     padding-top: 50px;
+//     display: none;
+//   }
+//   @media screen and (min-width: 1025px) {
+//     .p-sidebarMenu__title {
+//       display: block;
+//     }
+//   }
+//   .p-sidebarMenu__list {
+//     padding: 180px 0;
+//   }
+//   @media screen and (min-width: 1025px) {
+//     .p-sidebarMenu__list {
+//       padding-top: 70px;
+//     }
+//   }
+  
+//   .p-sidebarMenu__list>li {
+//     padding-left: 10%;
+//     font-size: 2.4rem;
+//     font-weight: 700;
+  
+//   }
+//   .p-sidebarMenu__list>li>ul{
+//     padding: 25px 0 25px 20px;
+  
+//   }
+//   .p-sidebarMenu__list>li>ul>li {
+//     font-size: 2rem;
+//     font-weight: normal;
+//     line-height: 250%;
+  
+//   }
+  

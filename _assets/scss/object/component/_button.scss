@@ -1,0 +1,28 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+.c-button {
+    margin         : 0;
+    text-align     : center;
+    display        : inline-block;
+    justify-content: center;
+    align-items    : center;
+    font-size      : 1.6rem;
+    font-weight    : 700;
+    border         : 1px solid variable.$c--default;
+    border-radius  : 10px;
+}
+.c-button--btn {
+    @extend .c-button;
+    width        : 100%;
+    max-width    : 400px;
+    padding      : 20px;
+    background   : variable.$bg--button;
+    color        : variable.$c--default;
+    border-radius: 20px;
+    // margin-bottom: 30px;
+    @include mixin.breakpoint(tab) {
+        // margin-bottom: 60px;
+        // padding      : 25px;
+    }
+}

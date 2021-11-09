@@ -1,0 +1,62 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+
+// wp-引用
+.wp-block-quote {
+    color     : variable.$c--brown;
+    background: variable.$bg--blockquote;
+    margin-bottom: 30px;
+    padding: 30px 20px;
+    @include mixin.breakpoint(tab) {
+        margin-bottom: 70px;
+        padding: 45px 50px;
+    }
+    & p {
+        line-height   : 1.45;
+    }
+    & cite {
+        & a {
+            text-decoration: underline;
+            color          : variable.$c--blue;
+        }
+    }
+}
+
+// 整形済みテキスト
+.wp-block-preformatted {
+    background: #F5F5F5;
+    line-height: 1.45;
+    padding: 30px 20px;
+    color: #3C2A10;
+    margin-bottom: 30px;
+    @include mixin.breakpoint(tab) {
+        margin-bottom: 60px;
+    }
+}
+
+.wp-block-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: variable.$c--brown;
+    background: #fff;
+    margin-bottom: 30px;
+    @include mixin.breakpoint(tab) {
+        margin-bottom: 60px;
+    }
+    & td {
+        border: 1px solid variable.$c--default;
+        padding: 25px;
+        &:first-of-type {
+            width: 40%;
+        }
+    }
+
+}
+.wp-block-buttons {
+    max-width: 429px;
+    & .wp-block-button__link {
+        border: 1px solid ;
+        padding: 25px 0;
+    }
+}

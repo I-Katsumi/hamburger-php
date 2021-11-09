@@ -1,0 +1,65 @@
+@use '../../foundation/variable';
+@use '../../foundation/mixin';
+
+.wp-pagenavi {
+    align-items    : center;
+    display: flex;
+    justify-content: space-between;
+    padding        : 25px 5%;
+    font-family    : variable.$font--roboto;
+    @include mixin.breakpoint(tab) {
+        justify-content: center;
+    }
+    .page.smaller,
+    .current,
+    .nextpostslink,
+    .page.larger,
+    .previouspostslink {
+        border    : solid 1px variable.$c--default;
+        margin    : 0 0.8%;
+        text-align: center;
+        font-weight    : 700;
+        @include mixin.breakpoint(tab) {
+            width      : 35px;
+            height     : 35px;
+        }
+    }
+    span.pages,
+    .page.smaller,
+    .page.larger,
+    .current {
+        display   : none;
+        @include mixin.breakpoint(tab) {
+            display: block;
+        }
+    }
+    span.pages,
+    .nextpostslink,
+    .previouspostslink,
+    .nextpostslink span,
+    .previouspostslink span {
+        font-weight    : 700;
+        border: none;
+    }
+
+    .nextpostslink span::before {
+            content: "次へ ";
+            @include mixin.breakpoint(tab) {
+                display: none;
+            }
+    }
+    .previouspostslink span::after {
+        content: " 前へ";
+        @include mixin.breakpoint(tab) {
+            display: none;
+        }
+    }
+    .page.smaller,
+    .page.larger {
+        background: #fff;
+    }
+    .current {
+        background: variable.$bg--card;
+        color: #fff;
+    }
+}
